@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import Image from "next/image";
 import styles from "./contact.module.css";
 // import dynamic from "next/dynamic";
@@ -10,6 +10,11 @@ import styles from "./contact.module.css";
 //   title: "Contact Page",
 //   description: "Contact description",
 // };
+
+export const metadata = {
+  title: "Contact Page",
+  description: "Contact description",
+};
 
 const ContactPage = () => {
   // const a = Math.random();
@@ -35,7 +40,7 @@ const ContactPage = () => {
             rows="10"
             placeholder="Message"
           ></textarea>
-          <button onClick={() => console.log("clicked")}>Send</button>
+          <button>Send</button>
         </form>
       </div>
     </div>
