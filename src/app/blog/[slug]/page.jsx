@@ -6,15 +6,15 @@ import { Suspense } from "react";
 import { getPost } from "../../../../lib/data";
 
 // FETCH DATA WITH AN API
-// const getData = async (slug) => {
-//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
+const getData = async (slug) => {
+  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
 
-//   if (!res.ok) {
-//     throw new Error("Something went wrong");
-//   }
+  if (!res.ok) {
+    throw new Error("Something went wrong");
+  }
 
-//   return res.json();
-// };
+  return res.json();
+};
 
 export const generateMetadata = async ({ params }) => {
   const { slug } = params;
@@ -32,12 +32,12 @@ const SinglePostPage = async ({ params }) => {
   console.log(slug);
 
   // FETCH DATA WITH AN API
-  // const post = await getData(slug);
-  // console.log("SinglePost: ", post);
+  const post = await getData(slug);
+  console.log("SinglePost: ", post);
 
   // FETCH DATA WITHOUT AN API
-  const post = await getPost(slug);
-  console.log("Post: ", post);
+  // const post = await getPost(slug);
+  // console.log("Post: ", post);
 
   return (
     <div className={styles.container}>
